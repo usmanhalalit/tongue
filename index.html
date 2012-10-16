@@ -26,6 +26,9 @@
 				
 				//Makes code pretty
 				window.prettyPrint && prettyPrint()
+
+				//Ugly IE fix
+				if($.browser.msie) $('body').css('margin-top','60');
 			});
 		</script>
 	</head>
