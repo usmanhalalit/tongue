@@ -17,6 +17,10 @@
 	z-index:1031;
 }
 
+ul.nav .twitter-share-button{
+	margin-top: 12px;
+}
+
 a.download{
 	margin-right: 80px;
 }
