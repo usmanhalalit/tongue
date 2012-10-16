@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Tongue jQuery Plugin</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Le styles -->
+		<link href="assets/css/spacelab.min.css" rel="stylesheet">
+		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+		
+		<script type="text/javascript" src="assets/js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="assets/js/google-code-prettify/prettify.js"></script>
+		<script type="text/javascript" src="jquery.tongue.min.js"></script>
+		
+		<script type="text/javascript"> 
+			$(document).ready(function() {
+				$('#tongue-1').tongue();
+				$('#tongue-2').tongue({
+					position 	: 'top',
+					start_speed : 500,
+					end_speed 	: 300
+				});
+				
+				//Makes code pretty
+				window.prettyPrint && prettyPrint()
+			});
+		</script>
+	</head>
+
+	<body>
+		<a href="https://github.com/usmanhalalit"><img id="fork-me" alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="javascript:void(0)">Tongue</a>
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="well">
+				<h2>Tongue jQuery Plugin <a title="Download" class="download pull-right btn btn-large btn-primary span2" href="https://github.com/usmanhalalit/tongue/zipball/master"><i class="icon-download-alt icon-white"></i> Download </a></h2> 
+				<p>Its a very simple jQuery plugin which allows you to add animated dropdown child element to any elements without using any CSS styles for that.</p>
+				<p>Checkout <a target="_blank" href="http://usman.it">my blog</a> for other resources.</p>
+			</div>
+			<div class="row">
+				<div class="span6">
+					<h2>Example 1 <small>Hover the image</small></h2>
+					<div id="tongue-2">
+						<a title="Flower" href="javascript:void(0)" ><img src="assets/img/flower.jpg" alt="Flower"></a>
+						<div class="label label-info">Example Image</div>
+						<div class="tongue-content">
+							Name: flower.png<br>
+							Size: 68.7 kB<br>
+							Photography: Sana Amrin<br>
+							<a href="javascript:void(0)" class="gallery-edit btn"><i class="icon-edit"></i> Edit</a> 
+							<a href="javascript:void(0)" class="gallery-delete btn"><i class="icon-remove"></i> Delete</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="span6">
+					<h2>Example 2 <small>Hover the image</small></h2>
+					<div id="tongue-1">
+						<a title="Child" href="javascript:void(0)" ><img src="assets/img/child.jpg" alt="Child"></a>
+						<div class="tongue-content">
+							<a href="javascript:void(0)" class="gallery-edit btn"><i class="icon-edit"></i></a> 
+							<a href="javascript:void(0)" class="gallery-delete btn"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div>
+				<h2>Usage:</h2>
+				<ol>
+					<li>
+						<a href="https://github.com/usmanhalalit/tongue/zipball/master">Download the jQuery Tongue plugin</a>.
+					</li>
+					<li>
+						Add the <code>jquery.tongue</code> script in your <code>head</code> section. Also make sure jQuery 1.7+ is loaded.
+						<pre class="prettyprint">&lt;script type="text/javascript" src="jquery.tongue.js"&gt;&lt;/script&gt;</pre>
+					</li>
+					<li>
+						HTML Sample
+<pre class="prettyprint">
+&lt;div id="tongue"&gt;
+	&lt;img src="assets/img/child.jpg" alt="Child" /&gt; &lt;!-- Main element, can be image or anything. --&gt;
+	&lt;div class="tongue-content"&gt;Tongue Content&lt;/div&gt; &lt;!-- Content to be shown as tongue.  --&gt;
+&lt;/div&gt;
+</pre>
+
+					</li>
+					<li>
+						JavaScript / jQuery Code:
+<pre class="prettyprint">
+$('#tongue').tongue();
+</pre>						
+					</li>
+				</ol>
+			</div>
+			<h2>Options:</h2>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Option</th>
+						<th>Description</th>
+						<th>Default</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>position</code></td>
+						<td>Position of dropdown content, <code>top</code> or <code>bottom</code>.</td>
+						<td>bottom</td>
+					</tr>
+					<tr>
+						<td><code>tongue_content</code></td>
+						<td>Selector for element containing the content to be shown as tongue.</td>
+						<td>.tongue-content</td>
+					</tr>
+					<tr>
+						<td><code>start_speed</code></td>
+						<td>Speed in millisecond while sliding down.</td>
+						<td>500</td>
+					</tr>
+					<tr>
+						<td><code>end_speed</code></td>
+						<td>Speed in millisecond while sliding up.</td>
+						<td>400</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<h2>Options Usage Example:</h2>
+<pre class="prettyprint">
+$('#tongue').tongue({
+	'position'      : 'bottom',
+	'tongue_content': '.tongue-content',
+	'start_speed'   : 500,
+	'end_speed'     : 400
+});
+</pre>
+			
+			<hr>
+			
+			<footer>
+				<p>&copy; <a target="_blank" href="http://usman.it">Muhammad Usman</a></p>
+			</footer>
+
+		</div> <!-- /container -->
+	</body>
+</html>
